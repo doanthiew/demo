@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="plugin/boostrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="plugin/fontawesome-free-6.6.0-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-light"><i class="fa-solid fa-bars"></i>Login</h4>
+        </div>
+        <div class="card-body">
+          <form id="loginForm">
+            <div class="row mb-3">
+              <label
+                for="UserName"
+                class="col-sm-2 col-form-label col-form-label-lg"
+                >Username:</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  id="UserName"
+                  placeholder="Username"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label
+                for="Password"
+                class="col-sm-2 col-form-label col-form-label-lg"
+                >Password:</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  id="Password"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">
+                <button
+                  class="btn btn-primary btn-lg"
+                  type="button"
+                  id="btnSignin"
+                >
+                  Sign In
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

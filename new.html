@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management</title>
+    <link href="plugin/boostrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="fontawesome-free-6.6.0-web/css/solid.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Student Management</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Major</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Student</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Welcome to ...</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="login.html"
+                ><i class="fa-solid fa-right-to-bracket"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="card">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-md">
+              <h1>Major list</h1>
+            </div>
+            <div class="col-md-auto">
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#addMajorModal"
+                id="addMajorBtn"
+              >
+                <i class="fas fa-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="table-primary">
+                <tr>
+                  <th>#</th>
+                  <th>Major Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>IT</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Marketing</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Network</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-primary">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Accounting</td>
+                  <td class="text-center">
+                    <button
+                      class="btn btn-sm btn-outline-primary"
+                      onclick="editMajor(this)"
+                    >
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      onclick="editMajor(this)"
+                    >
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addMajorModal"
+      tabindex="-1"
+      aria-labelledby="addMajorModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addMajorModalLabel">New Major</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="majorName" class="form-label">Major name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="majorName"
+                  placeholder="Enter major name"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+      document
+        .getElementById("addMajorBtn")
+        .addEventListener("click", function () {
+          document.getElementById("addMajorForm").reset(); // Clear the form
+        });
+
+      // Add event listeners for delete buttons
+      const deleteButtons = document.querySelectorAll(".btn-outline-danger");
+      deleteButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const row = this.closest("tr");
+          row.remove(); // Remove the row from the table
+        });
+      });
+
+      // Add event listener for saving new major
+      document
+        .querySelector(".modal-footer .btn-primary")
+        .addEventListener("click", function () {
+          const majorName = document.getElementById("majorName").value;
+          if (majorName) {
+            const tableBody = document.querySelector("tbody");
+            const newRow = document.createElement("tr");
+            const majorCount = tableBody.rows.length + 1;
+
+            newRow.innerHTML = `
+            <td>${majorCount}</td>
+            <td>${majorName}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+              <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+            </td>
+          `;
+
+            tableBody.appendChild(newRow);
+
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("addMajorModal")
+            );
+            modal.hide();
+          }
+        });
+    </script>
+  </body>
+</html>
